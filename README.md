@@ -1,0 +1,2 @@
+# SampleWebAuthentication
+Identityでの認証とAADでの認証を設定で切り替えるサンプルプログラム
