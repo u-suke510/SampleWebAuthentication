@@ -1,0 +1,34 @@
+﻿@model LoginViewModel
+@using SampleAuthentication.ViewModels.Account
+@{
+    ViewData["Title"] = "ログイン";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" role="form">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ValidationMessage("authentication", new { @class = "message-error invalid-feedback d-block" })
+            <label>メールアドレスとパスワードを入力してください。</label>
+        </div>
+        <div class="col-md-12 form-group">
+            @Html.LabelFor(Model => Model.Email)
+            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "invalid-feedback" })
+        </div>
+        <div class="col-md-12 form-group">
+            @Html.LabelFor(Model => Model.Pwd)
+            @Html.PasswordFor(Model => Model.Pwd, new { @class = "form-control" })
+            @Html.ValidationMessageFor(Model => Model.Pwd, null, new { @class = "invalid-feedback" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-4 text-nowrap">
+            @Html.ActionLink("パスワードの再発行", "ForgotPwd", "Account", null, new { @class = "small" })
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <button type="submit">ログイン</button>
+            @*<span id="btnLogin" class="ecld-form-btn btn btn-ok btn-block">ログイン</span>*@
+        </div>
+    </div>
+</form>

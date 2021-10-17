@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> userManager
+@{
+    ViewData["Title"] = "User Page";
+    var user = await userManager.FindByNameAsync(User.Identity.Name);
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if (user == null)
+    {
+        <p>Hello Guest.</p>
+    }
+    else
+    {
+        <p>@($"Hello {user.DispName}.")</p>
+        <p>@($"UserId: {user.Id}.")</p>
+        <p>@($"UserName: {User.Identity.Name}.")</p>
+    }
+</div>

@@ -1,0 +1,8 @@
+﻿################################################################################
+# この .gitignore ファイルは Microsoft(R) Visual Studio によって自動的に作成されました。
+################################################################################
+
+/src/SampleAuthentication/Libs/bin/Debug/net5.0
+/src/SampleAuthentication/Libs/obj
+/src/SampleAuthentication/SampleAuthentication/bin/Debug/net5.0
+/src/SampleAuthentication/SampleAuthentication/obj
